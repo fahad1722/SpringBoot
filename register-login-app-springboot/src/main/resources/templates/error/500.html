@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Server Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>500</h1>
+        <p>Sorry, something went wrong on our end.</p>
+        <p><a th:href="@{/}">Go back to Home</a></p>
+    </div>
+</body>
+</html>

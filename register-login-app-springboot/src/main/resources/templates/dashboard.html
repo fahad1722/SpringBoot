@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar a, .navbar button {
+            color: #f2f2f2;
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar a:hover, .navbar button:hover {
+            color: black;
+            background-color: #ddd;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto 0;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" th:href="@{/index}">Home</a>
+        <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <p>Welcome, <span sec:authentication="principal.username">ADMIN</span>. You have administrative privileges.</p>
+    </div>
+</body>
+</html>
